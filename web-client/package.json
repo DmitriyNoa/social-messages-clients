@@ -6,6 +6,7 @@
     "url": "https://github.com/DmitriyNoa/react-typescript-sagas-hooks-starter.git"
   },
   "dependencies": {
+    "common": "0.0.1"
   },
   "scripts": {
     "start": "node static-server.js",
