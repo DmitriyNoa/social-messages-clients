@@ -5,6 +5,7 @@
   "repository": {
     "url": "https://github.com/DmitriyNoa/social-messages-client.git"
   },
+  "license": "MIT",
   "dependencies": {
     "emotion": "^10.0.27",
     "express": "^4.17.1",

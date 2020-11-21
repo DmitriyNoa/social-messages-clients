@@ -1,7 +1,7 @@
 {
   "name": "common",
   "version": "0.0.1",
-
+  "main": "src/index.ts",
   "dependencies": {
     "cross-env": "5.0.5"
   }
