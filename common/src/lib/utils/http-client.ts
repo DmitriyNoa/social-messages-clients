@@ -1,13 +1,8 @@
-import { config } from "../config";
-import {HttpResponse} from "../interfaces/common";
+import {IHttpResponse} from "../interfaces/common";
 
-const apiBaseURL = config.API_URL;
-
-const get = async <T>(url: string): Promise<HttpResponse<T>> => {
-    const finalURL = apiBaseURL + url;
-
+const get = async <T>(url: string): Promise<IHttpResponse<T>> => {
     try {
-        const response = await fetch(finalURL);
+        const response = await fetch(url);
         const data = await response.json();
 
         return data;

@@ -4,7 +4,7 @@ interface PaginationInfo {
     pages: number;
     prev: string | null;
 }
-export type HttpResponse<DataType> = {
+export interface IHttpResponse<DataType> {
     info: PaginationInfo;
     results: DataType[];
 }

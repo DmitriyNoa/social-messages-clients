@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const nodeExternals = require('webpack-node-externals');
 const dotenv = require('dotenv');
 const webpack = require('webpack');
 
@@ -12,8 +11,6 @@ const envKeys = Object.keys(env).reduce((prev, next) => {
     prev[`process.env.${next}`] = JSON.stringify(env[next]);
     return prev;
 }, {});
-
-console.log(__dirname);
 
 module.exports = {
     entry: path.resolve(__dirname, 'src', 'index.tsx'),

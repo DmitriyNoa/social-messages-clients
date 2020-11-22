@@ -2,8 +2,9 @@
 import { CONSTANTS } from "../constants";
 import { put } from 'redux-saga/effects';
 import {getCharactersAsync} from "../actions/characters";
-import {HttpResponse} from "../lib/interfaces/common";
-import {get} from "../lib/utils/http-client";
+import {get} from "common";
+import {config} from "../config";
+import {IHttpResponse} from "common";
 
 export interface Origin {
     name: string;
@@ -30,9 +31,9 @@ export interface ICharacter {
     created: Date;
 }
 
-function* getCurrenciesList(): Generator<any, ICharacter[] | undefined, HttpResponse<ICharacter>> {
+function* getCurrenciesList(): Generator<any, ICharacter[] | undefined, IHttpResponse<ICharacter>> {
     try {
-        const characters = yield get<ICharacter[]>(CONSTANTS.URLS.CHARACTERS);
+        const characters = yield get<ICharacter[]>(`${config.API_URL}/${CONSTANTS.URLS.CHARACTERS}`);
         yield put(getCharactersAsync.success(characters.results));
         return [];
     } catch (err) {
