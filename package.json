@@ -61,6 +61,6 @@
   },
   "workspaces": {
     "packages": ["web-client", "mobile-client", "common"],
-    "nohoist": ["**/react-native", "**/react-native/**", "**/react-native/**", "**/@react-native-community/**"]
+    "nohoist": ["**/react-native", "**/react-native/**", "**/react-native/**", "**/@react-native-community/**", "**/react-router-native/**"]
   }
 }
