@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 import {NativeRouter, Route, Link} from 'react-router-native';
+import {Login} from './src/modules/login/components/login';
 
 const Home = () => <Text style={styles.header}>Home</Text>;
 
@@ -13,7 +14,6 @@ const Topic = ({match}: any) => (
 
 const Topics = ({match}: any) => (
   <View>
-    <Text style={styles.header}>Topics</Text>
     <View>
       <Link
         to={`${match.url}/rendering`}
@@ -57,11 +57,17 @@ const App = () => (
         <Link to="/topics" underlayColor="#f0f4f7" style={styles.navItem}>
           <Text>Topics</Text>
         </Link>
+        <Link to="/login" underlayColor="#f0f4f7" style={styles.navItem}>
+          <Text>Login</Text>
+        </Link>
       </View>
 
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/topics" component={Topics} />
+    </View>
+    <View>
+      <Route path="/login" component={Login} />
     </View>
   </NativeRouter>
 );
