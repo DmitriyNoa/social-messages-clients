@@ -15,7 +15,7 @@
     "**/*.test.tsx",
     "node_modules",
     "../node_modules",
-    "../common/node_modules",
+    "../common-libs/node_modules",
     "dist"
   ]
 }

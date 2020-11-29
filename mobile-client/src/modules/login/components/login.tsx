@@ -1,17 +1,23 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, TextInput} from 'react-native';
+import {StyleSheet, View, Text, ImageBackground} from 'react-native';
+import {layoutStyles} from '../../common/styles';
+import {Input} from '../../common/components';
+import {space} from '../../common/backgrounds';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'column',
     justifyContent: 'center',
+    backgroundColor: 'transparent',
   },
   loginFormContainer: {
     width: '80%',
-    borderColor: 'red',
     height: 200,
-    borderWidth: 1,
+    alignSelf: 'center',
+  },
+  image: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
   },
 });
 const Login = () => {
@@ -26,22 +32,24 @@ const Login = () => {
     }
   };
   return (
-    <View>
-      <View style={styles.loginFormContainer}>
-        <Text>Login</Text>
-        <TextInput
-          onChangeText={(text) => processText(text, 'email')}
-          placeholder={'email'}
-          value={email}
-        />
+    <ImageBackground style={styles.image} source={space}>
+      <View style={[layoutStyles.container, styles.container]}>
+        <View style={styles.loginFormContainer}>
+          <Text>Login</Text>
+          <Input
+            onChangeText={(text) => processText(text, 'email')}
+            placeholder={'email'}
+            value={email}
+          />
 
-        <TextInput
-          onChangeText={(text) => processText(text, 'password')}
-          placeholder={'password'}
-          value={password}
-        />
+          <Input
+            onChangeText={(text) => processText(text, 'password')}
+            placeholder={'password'}
+            value={password}
+          />
+        </View>
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 

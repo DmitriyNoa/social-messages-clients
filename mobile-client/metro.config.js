@@ -4,6 +4,7 @@
  *
  * @format
  */
+const path = require('path');
 
 module.exports = {
   transformer: {
@@ -14,4 +15,5 @@ module.exports = {
       },
     }),
   },
+  watchFolders: [__dirname, path.resolve(__dirname, '../common-libs')],
 };
