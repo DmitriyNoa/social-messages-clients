@@ -1,5 +1,4 @@
-import {space} from "./space";
+import {space} from './space';
+import {planet} from './planet';
 
-export {
-    space,
-}
+export {space, planet};

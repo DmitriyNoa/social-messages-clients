@@ -1,5 +1,4 @@
-import {space} from "./backgrounds/space";
-
+import {COLORS} from './colors';
 export {
-    space,
+    COLORS,
 }

@@ -2,24 +2,27 @@ import React from 'react';
 import {Text, View} from 'react-native';
 
 import {NativeRouter, Route, Link} from 'react-router-native';
-import {Login} from './src/modules/login/components/login';
+
 import {textStyles} from './src/modules/common/styles';
+
+import {Login} from './src/modules/login';
+import {Logo} from './src/modules/common';
 
 const Home = () => (
   <Text>
     <View>
-      <Link to="/login" style={{marginTop: 50}}>
+      <Link to="/login">
         <Text style={textStyles.black}>Login</Text>
       </Link>
     </View>
-    Home
   </Text>
 );
 
 const App = () => (
   <NativeRouter>
-    <Route exact path="/" component={Home} />
-    <Route path="/login" component={Login} />
+    <Route path="/" component={Login} />
+    <Route path="/rrr" component={Home} />
+    <Logo />
   </NativeRouter>
 );
 
