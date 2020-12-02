@@ -27,3 +27,14 @@ This is an experimental/learning/best practices gathering, nonprofitable project
 - Install dependencies `yarn install`.
 - Install pods `cd mobile-client/ios`, `pod install`.
 
+## Running
+## Mobile client
+- IOS
+    - `cd mobile-client`
+    - `yarn ios`
+- Android
+    - `cd mobile-client`
+    - `yarn android`
+## WEB client
+- `cd web-client`
+- `yarn serve`
