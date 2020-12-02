@@ -8,10 +8,12 @@ import {
 import { store } from "./store";
 import { Main } from "./components/containers/main/main"
 import { Login } from "./modules/login/components";
+import {Logo} from "./modules/common";
 
 function App() {
   return (
     <div className="App">
+      <Logo />
       <Provider store={store}>
           <Router>
               <Switch>
