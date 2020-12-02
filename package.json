@@ -17,9 +17,12 @@
     "reselect": "^4.0.0",
     "typesafe-actions": "^5.1.0",
     "typescript": "~3.7.2",
-    "uuid": "^8.0.0"
+    "uuid": "^8.0.0",
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5"
   },
   "scripts": {
+    "ios": "react-native run-ios"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -61,14 +64,15 @@
   },
   "workspaces": {
     "packages": ["web-client", "mobile-client", "common-libs"],
-    "nohoist": ["**/react-native",
-      "**/react-native/**",
+    "nohoist": [
+      "**/react-native",
       "**/react-native/**",
       "**/@react-native-community/**",
       "**/react-router-native/**",
       "**/@types/react-native/**",
       "**/@types/react-router-native/**",
-      "expo-yarn-workspaces"
+      "**/@babel/runtime/**",
+      "**/@babel/core/**"
     ]
   }
 }

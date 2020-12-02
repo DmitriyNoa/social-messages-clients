@@ -2,6 +2,7 @@
   "name": "web-client",
   "version": "0.1.0",
   "private": false,
+  "license": "MIT",
   "repository": {
     "url": "https://github.com/DmitriyNoa/react-typescript-sagas-hooks-starter.git"
   },
@@ -33,7 +34,8 @@
     "webpack": "^5.6.0",
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0",
-    "webpack-node-externals": "^2.5.2"
+    "webpack-node-externals": "^2.5.2",
+    "common-libs": "0.0.1"
   },
   "scripts": {
     "start": "node static-server.js",

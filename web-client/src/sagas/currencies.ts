@@ -2,9 +2,9 @@
 import { CONSTANTS } from "../constants";
 import { put } from 'redux-saga/effects';
 import {getCharactersAsync} from "../actions/characters";
-import {get} from "common";
 import {config} from "../config";
-import {IHttpResponse} from "common";
+import {get} from "common-libs";
+import {IHttpResponse} from 'common-libs';
 
 export interface Origin {
     name: string;

@@ -1,8 +1,13 @@
 {
   "name": "common-libs",
   "version": "0.0.1",
+  "license": "MIT",
   "main": "src/index.ts",
   "dependencies": {
-    "cross-env": "5.0.5"
+    "cross-env": "5.0.5",
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5"
+  },
+  "devDependencies": {
   }
 }

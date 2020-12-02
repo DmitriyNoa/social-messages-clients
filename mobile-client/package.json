@@ -7,14 +7,12 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "clean": "rm -rf ios/Pods && watchman watch-del-all"
   },
   "dependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/runtime": "^7.8.4",
     "@react-native-async-storage/async-storage": "^1.13.2",
     "common-libs": "0.0.1",
-    "expo-yarn-workspaces": "^1.2.1",
     "react-native": "0.63.3",
     "react-router-native": "^5.2.0"
   },
