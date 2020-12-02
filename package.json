@@ -22,7 +22,7 @@
     "@babel/runtime": "^7.12.5"
   },
   "scripts": {
-    "ios": "react-native run-ios"
+    "clean": "rm -rf node_modules && rm -rf common-libs/node_modules && rm -rf web-client/node_modules && rm -rf mobile-client/node_modules && yarn cache clean -f"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -63,16 +63,6 @@
     "babel-jest": "^24.9.0"
   },
   "workspaces": {
-    "packages": ["web-client", "mobile-client", "common-libs"],
-    "nohoist": [
-      "**/react-native",
-      "**/react-native/**",
-      "**/@react-native-community/**",
-      "**/react-router-native/**",
-      "**/@types/react-native/**",
-      "**/@types/react-router-native/**",
-      "**/@babel/runtime/**",
-      "**/@babel/core/**"
-    ]
+    "packages": ["web-client", "mobile-client", "common-libs"]
   }
 }

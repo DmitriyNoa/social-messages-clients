@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { store } from "./store";
 import { Main } from "./components/containers/main/main"
+import { Login } from "./modules/login/components";
 
 function App() {
   return (
@@ -14,10 +15,13 @@ function App() {
       <Provider store={store}>
           <Router>
               <Switch>
-                  <Route path="/">
-                      <Main />
+                  <Route path="/login" >
+                      <Login />
                   </Route>
                   <Route path="/character/:id">
+                      <Main />
+                  </Route>
+                  <Route path="/">
                       <Main />
                   </Route>
               </Switch>

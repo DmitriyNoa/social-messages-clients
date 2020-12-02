@@ -9,5 +9,11 @@
     "@babel/runtime": "^7.12.5"
   },
   "devDependencies": {
+  },
+  "workspaces": {
+    "nohoist": [
+      "@babel/runtime/**",
+      "@babel/core/**"
+    ]
   }
 }
