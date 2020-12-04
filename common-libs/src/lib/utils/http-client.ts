@@ -10,7 +10,24 @@ const get = async <T>(url: string): Promise<IHttpResponse<T>> => {
         throw new Error(e);
     }
 }
+const post = async <T, L>(url: string, data: T): Promise<L> => {
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+        });
+        const result = await response.json();
+
+        return result;
+    } catch (e) {
+        throw new Error(e);
+    }
+}
 
 export {
-    get
+    get,
+    post,
 }

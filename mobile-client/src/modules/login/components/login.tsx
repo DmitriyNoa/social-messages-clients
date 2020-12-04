@@ -1,9 +1,18 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, ImageBackground, Image} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  ImageBackground,
+  Image,
+  Button,
+} from 'react-native';
 import {layoutStyles} from '../../common/styles';
 import {planet, space} from '../../common/backgrounds';
 import {Input} from '../../common';
 import {COLORS} from 'common-libs';
+import {useDispatch} from 'react-redux';
+import {loginAsync} from 'common-libs';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,7 +26,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: '50%',
     left: 10,
-    zIndex: 200,
     backgroundColor: COLORS.grey_0,
     padding: 20,
     borderRadius: 20,
@@ -40,15 +48,15 @@ const styles = StyleSheet.create({
   },
   planet: {
     position: 'absolute',
-    top: '50%',
+    top: 0,
     left: 0,
     width: '100%',
-    zIndex: 50,
   },
 });
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const processText = (value: string, type: 'email' | 'password') => {
     if (type === 'email') {
@@ -57,10 +65,15 @@ const Login = () => {
       setPassword(value);
     }
   };
+
+  const login = () => {
+    dispatch(loginAsync.request({email, password}));
+  };
+
   return (
     <ImageBackground style={styles.image} source={space}>
       <View style={[layoutStyles.container, styles.container]}>
-        <View styles={styles.planet}>
+        <View style={styles.planet}>
           <Image source={planet} />
         </View>
         <View style={styles.loginFormContainer}>
@@ -80,6 +93,7 @@ const Login = () => {
               value={password}
             />
           </View>
+          <Button onPress={login} title="Login" />
         </View>
       </View>
     </ImageBackground>

@@ -5,10 +5,10 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import { store } from "./store";
 import { Main } from "./components/containers/main/main"
 import { Login } from "./modules/login/components";
 import {Logo} from "./modules/common";
+import {store} from "common-libs";
 
 function App() {
   return (
