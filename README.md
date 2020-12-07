@@ -1,4 +1,4 @@
-# SPACESIAL
+# SPACECIAL
 A hypothetical social network for space colonists called "Spacecial". 
 This is an experimental/learning/best practices gathering, nonprofitable project, aiming to collect best practices of code reuse between multiple platforms: web, Android and IOS.
 ![preview](./docs/img/preview.png)
