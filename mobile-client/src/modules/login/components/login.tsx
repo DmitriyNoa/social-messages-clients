@@ -80,7 +80,7 @@ const Login = () => {
     dispatch(loginAsync.request({email, password}));
   };
 
-  return !authToken ? (
+  return !auth ? (
     <ImageBackground style={styles.image} source={space}>
       <View style={[layoutStyles.container, styles.container]}>
         <View style={styles.planet}>

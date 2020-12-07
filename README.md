@@ -28,13 +28,24 @@ This is an experimental/learning/best practices gathering, nonprofitable project
 - Install pods `cd mobile-client/ios`, `pod install`.
 
 ## Running
-## Mobile client
+### Mobile client
 - IOS
     - `cd mobile-client`
     - `yarn ios`
 - Android
     - `cd mobile-client`
     - `yarn android`
-## WEB client
+### WEB client
 - `cd web-client`
 - `yarn serve`
+
+## Features list plan
+- Register user 
+- [x] Login
+- Post a text message
+- Explore/search other users
+- Follow/unfollow other users
+- See messages feed
+- Post an image message
+- Post a video message
+- Post a video message
