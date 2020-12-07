@@ -40,12 +40,17 @@ This is an experimental/learning/best practices gathering, nonprofitable project
 - `yarn serve`
 
 ## Features list plan
-- Register user 
 - [x] Login
+- Register user 
 - Post a text message
 - Explore/search other users
 - Follow/unfollow other users
+- Like a message
 - See messages feed
-- Post an image message
-- Post a video message
-- Post a video message
+- User privacy settings (who can see user's data)
+- Repost a message
+- Comment under a message
+- Post a message with image 
+- Post a message with video 
+- Post a message with parsable URL (show preview image and text of a posted link)
+- User groups
