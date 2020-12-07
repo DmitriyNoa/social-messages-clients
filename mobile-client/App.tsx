@@ -11,7 +11,13 @@ import {PrivateRoute} from './src/modules/common/components/auth/guarded';
 const Home = () => (
   <View style={layoutStyles.container}>
     <Link to="/login">
-      <Text style={textStyles.black}>Login</Text>
+      <Text
+        style={[
+          textStyles.white,
+          {marginTop: 160, fontSize: 30, textAlign: 'center'},
+        ]}>
+        Welcome to the space
+      </Text>
     </Link>
   </View>
 );
