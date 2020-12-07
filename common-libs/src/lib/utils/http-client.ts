@@ -1,6 +1,6 @@
 import {IHttpResponse} from "../interfaces/common";
 
-const get = async <T>(url: string): Promise<IHttpResponse<T>> => {
+const get = async <ReturnTye>(url: string): Promise<IHttpResponse<ReturnTye>> => {
     try {
         const response = await fetch(url);
         const data = await response.json();
@@ -10,7 +10,7 @@ const get = async <T>(url: string): Promise<IHttpResponse<T>> => {
         throw new Error(e);
     }
 }
-const post = async <T, L>(url: string, data: T): Promise<L> => {
+const post = async <DataType, ReturnType>(url: string, data: DataType): Promise<ReturnType> => {
     try {
         const response = await fetch(url, {
             method: 'POST',

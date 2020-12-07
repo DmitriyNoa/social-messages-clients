@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import {Redirect} from 'react-router-native';
 import {
   StyleSheet,
   View,
@@ -10,8 +11,8 @@ import {
 import {layoutStyles} from '../../common/styles';
 import {planet, space} from '../../common/backgrounds';
 import {Input} from '../../common';
-import {COLORS} from 'common-libs';
-import {useDispatch} from 'react-redux';
+import {COLORS, IAppState} from 'common-libs';
+import {useDispatch, useSelector} from 'react-redux';
 import {loginAsync} from 'common-libs';
 
 const styles = StyleSheet.create({
@@ -56,6 +57,15 @@ const styles = StyleSheet.create({
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [auth, setAuth] = useState('');
+  const authToken = useSelector((state: IAppState) => {
+    return state.auth.token;
+  });
+
+  useEffect(() => {
+    authToken && setAuth(authToken);
+  }, [authToken]);
+
   const dispatch = useDispatch();
 
   const processText = (value: string, type: 'email' | 'password') => {
@@ -70,7 +80,7 @@ const Login = () => {
     dispatch(loginAsync.request({email, password}));
   };
 
-  return (
+  return !authToken ? (
     <ImageBackground style={styles.image} source={space}>
       <View style={[layoutStyles.container, styles.container]}>
         <View style={styles.planet}>
@@ -97,6 +107,8 @@ const Login = () => {
         </View>
       </View>
     </ImageBackground>
+  ) : (
+    <Redirect to="/login" />
   );
 };
 

@@ -1,13 +1,12 @@
 import { loginAsync} from "../../actions/user/user";
 import { getType } from "typesafe-actions";
-import { IUser } from "../../interfaces/users";
+import {ILogin, IUser} from "../../interfaces/users";
 
-const userInitialState: IUser = {
-    email: '',
-    id: '',
+const userInitialState: ILogin = {
+    token: '',
 };
 
-export const user = (state: IUser = userInitialState, action: ReturnType<typeof loginAsync.success>) => {
+export const auth = (state: ILogin = userInitialState, action: ReturnType<typeof loginAsync.success>) => {
     switch (action.type) {
         case getType(loginAsync.success): {
             return action.payload;

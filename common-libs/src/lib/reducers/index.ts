@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import {IUser} from "../interfaces/users";
-import {user} from "./user/user";
+import {ILogin} from "../interfaces/users";
+import { auth } from "./user/user";
 
 
 export interface IAppState {
-    user: IUser;
+    auth: ILogin;
 }
 
 export const rootReducers = combineReducers<IAppState>({
-    user,
+    auth,
 });
