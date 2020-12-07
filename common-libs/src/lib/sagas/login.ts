@@ -7,6 +7,7 @@ import {loginAsync} from '../actions/user/user';
 import {post} from '../utils/http-client';
 
 function* login(action: ReturnType<typeof loginAsync.request>): Generator<any, ILogin | null, ILogin> {
+    console.log('calling', `${config.API_URL}/${CONSTANTS.URLS.LOGIN}`);
     try {
         const data = yield post<IUser, ILogin>(`${config.API_URL}/${CONSTANTS.URLS.LOGIN}`, action.payload);
         yield put(loginAsync.success(data));
