@@ -15,7 +15,7 @@ const envKeys = Object.keys(env).reduce((prev, next) => {
 module.exports = {
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
     },
@@ -24,22 +24,36 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.(tsx|ts|jsx|js|mjs)$/,
                 use: 'ts-loader',
-                exclude: /node_modules/,
+                exclude: /node_modules\/(?!()\/).*/,
             },
             {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
+                exclude: /node_modules\/(?!()\/).*/,
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
+                exclude: /node_modules\/(?!()\/).*/,
             },
         ],
     },
     resolve: {
-        extensions: [ '.tsx', '.ts', '.js', '.jsx' ],
+        alias: {
+            "react-native$": "react-native-web"
+        },
+        extensions: [
+            '.web.tsx',
+            '.web.ts',
+            '.tsx',
+            '.ts',
+            '.web.jsx',
+            '.web.js',
+            '.jsx',
+            '.js',
+        ],
     },
     devtool: 'inline-source-map',
     devServer: {

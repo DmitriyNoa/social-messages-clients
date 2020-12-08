@@ -1,6 +1,6 @@
 import React from 'react';
-import {css, cx} from "emotion";
-import {COLORS} from "common-libs";
+import {css, cx} from '@emotion/css';
+import {COLORS} from 'common-libs';
 
 export const logoStyles: any = {
     root: css({

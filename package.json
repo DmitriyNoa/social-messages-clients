@@ -39,6 +39,17 @@
     "eslint": "^6.5.1"
   },
   "workspaces": {
-    "packages": ["web-client", "mobile-client", "common-libs"]
+    "packages": ["web-client", "mobile-client", "common-libs"],
+    "nohoist": [
+      "react-native",
+      "react-native/**",
+      "@react-native-async-storage",
+      "@react-native-async-storage/**",
+      "@react-native-community",
+      "@react-native-community/**",
+      "react-router-native/**",
+      "@types/react-native/**",
+      "@types/react-router-native/**"
+    ]
   }
 }

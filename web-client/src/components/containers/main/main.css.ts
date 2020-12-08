@@ -1,4 +1,4 @@
-import { css } from "emotion";
+import { css } from "@emotion/css";
 interface MainCss {
     root?: string;
     h2?: string;

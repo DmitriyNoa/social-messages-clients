@@ -1,7 +1,7 @@
 import React from 'react';
-import {cx} from "emotion";
-import {loginStyles} from "./login.css";
-import {Input} from "../../common";
+import {cx} from '@emotion/css';
+import {loginStyles} from './login.css';
+import {Input} from '../../common';
 
 const Login = () => {
     return (

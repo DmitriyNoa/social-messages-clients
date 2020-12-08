@@ -1,13 +1,10 @@
-import React from "react";
-import {cx} from "emotion";
-import {exchangeStyles} from "./main.css";
+import React from 'react';
 
 
 export const Main: React.FC = () => {
 
-
     return (
-        <div className={cx(exchangeStyles.root)}>
+        <div>
 sdfsdf
         </div>
     );
