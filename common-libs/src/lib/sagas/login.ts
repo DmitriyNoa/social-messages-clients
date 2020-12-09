@@ -16,6 +16,7 @@ const storeData = async (value: string) => {
 }
 
 function* login(action: ReturnType<typeof loginAsync.request>): Generator<any, ILogin | null, ILogin> {
+    console.log("`${config.API_URL}/${CONSTANTS.URLS.LOGIN}`", `${config.API_URL}/${CONSTANTS.URLS.LOGIN}`);
     try {
         const data = yield post<IUser, ILogin>(`${config.API_URL}/${CONSTANTS.URLS.LOGIN}`, action.payload);
         yield put(loginAsync.success(data));
