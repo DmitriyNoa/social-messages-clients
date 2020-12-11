@@ -1,28 +1,30 @@
 import React, {useEffect, useState} from 'react';
-import {Route, Redirect} from 'react-router-native';
+import {Route, Redirect, withRouter} from 'react-router-native';
 import {useSelector} from 'react-redux';
 import {IAppState} from 'common-libs';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const PrivateRoute: React.FC<{
-  component: React.FC;
-  path: string;
-  exact?: boolean;
-}> = (props) => {
+const PrivateRoute = (props: any) => {
   const authToken = useSelector((state: IAppState) => {
     return state.auth.token;
   });
-
   const [token, setToken] = useState('');
+
+  useEffect(() => {
+    AsyncStorage.getItem('@token').then((data) => {
+      data && setToken(data);
+      data && props.history.push(props.path);
+    });
+  }, [props.history]);
 
   useEffect(() => {
     setToken(authToken);
   }, [authToken]);
 
-  console.log('Checking token', token);
   return token ? (
     <Route path={props.path} component={props.component} />
   ) : (
     <Redirect to="/login" />
   );
 };
-export {PrivateRoute};
+export default withRouter(PrivateRoute);

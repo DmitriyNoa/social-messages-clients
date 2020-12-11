@@ -6,7 +6,7 @@ import {layoutStyles, textStyles} from './src/modules/common/styles';
 import {Login} from './src/modules/login';
 import {Logo} from './src/modules/common';
 import {store} from 'common-libs';
-import {PrivateRoute} from './src/modules/common/components/auth/guarded';
+import PrivateRoute from './src/modules/common/components/auth/guarded';
 
 const Home = () => (
   <View style={layoutStyles.container}>
